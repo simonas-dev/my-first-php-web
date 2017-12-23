@@ -1,0 +1,216 @@
+ body {
+ font-family: Tahoma;
+ text-decorations: none;
+ font-size: 100%;
+ }
+ 
+table
+{
+border-collapse:collapse;
+}
+ .button {
+font-size: 15px;
+font-family: Tahoma;
+}
+td.bluebutton {
+background: #B8B8C6;
+border:0px solid #b2b9bf;
+border-radius:2px;
+-moz-border-radius:2px;
+}
+td.bluebutton:hover {
+background: #AAAFB5;
+style: cursor:pointer;
+}
+td.button {
+background: #dddddd;
+border:0px solid #b2b9bf;
+border-radius:5px;
+-moz-border-radius:5px;
+}
+td.button:hover {
+background: #c6c6c6;
+style: cursor:pointer;
+}
+table.menu_bar {
+width: 900px;
+height: 30px;
+cellpadding: 0%;
+line-height:135%
+}
+.bannar {
+font-size: 50px;
+color: #3299BB;
+margin-top: 31px;
+margin-bottom: 31px;
+}
+
+
+td.menu:hover {
+color: Black;
+background: #191919;
+border-color: #CCCCCC;
+border-width: 2px;
+border-radius:2px;
+-moz-border-radius:2px; 
+color:white;
+}
+td.menu {
+color: white;
+border-color: #4974bb;
+border=4px;
+border-radius:2px;
+-moz-border-radius:2px; 
+width:180px;
+z-index:5;
+
+}
+.menu {
+font-size: 27px;
+font-family: Tahoma;
+}
+
+
+.clock {
+height:38px;
+font-size: 32px;
+font-family: Tahoma;
+text-decoration: bold;
+}
+.round
+{
+border=0px;
+border-radius:5px;
+-moz-border-radius:5px; 
+}
+h2.filemenu {
+text-align: center;
+text-size: 120%;
+}
+.margin
+{
+margin-top:15px;
+margin-bottom:20px;
+margin-right:20px;
+margin-left:20px;
+}
+.textmargin {
+margin-top:25px;
+margin-bottom:40px;
+margin-right:70px;
+margin-left:50px;
+}
+
+a:link { text-decorations: none; color: #081660 }
+a:visited { text-decorations:none; color: #081660 }
+a:hover { text-decorations: underline; color: #294bf4; }
+
+b.blue {
+text-decoration: none;
+color: #3399ff;
+font-family: Tahoma;
+font-size: 80%;
+}
+/* content */
+.box {
+margin-bottom: 100px;
+margin-right: 100px;
+margin-left: 100px;
+border-style: solid;
+border-width: 3px;
+border-color: #E9E9E9;
+border-radius: 5px;
+-moz-border-radius: 5px; 
+font-family: Tahoma;
+font-size: 14px;
+}
+
+.user {
+margin-top: 0px;
+margin-bottom: 0px;
+margin-left: 0px;
+border-style: solid;
+border-width: 2px;
+border-color: #b2b9bf;
+border-radius: 5px;
+-moz-border-radius: 5px; 
+font-family: Tahoma;
+font-size: 13px;
+padding-bottom:6px;
+padding-left:4px;
+padding-right:4px;
+padding-top:6px;
+}
+table.lol, td.lol, th.lol
+{
+border:1px solid #b2b9bf;
+border-radius:2px;
+-moz-border-radius:2px; 
+padding-top: 2.5px;
+padding-left:2.5px;
+padding-bottom: 2.5px;
+padding-right: 2.5px;
+}
+linkbsize {
+width: 111px;
+height: 27px;
+}
+
+
+
+td.lolL {
+border:1px solid #b2b9bf;
+border-radius:2px;
+-moz-border-radius:2px; 
+padding-top: 2.5px;
+padding-left:2.5px;
+padding-bottom: 2.5px;
+padding-right: 2.5px;
+text-align: center;
+background: #dddddd;
+}
+td.lolL:hover {
+background: #c6c6c6;
+style: cursor:pointer;
+}
+
+p.filelist {
+margin-bottom: 40px;
+margin-left: 10px;
+margin-right:10px;
+}
+.roundshit {
+border-radius:2px;
+-moz-border-radius:2px; 
+}
+td.button_red {
+background: #890000;
+border:0px solid #b2b9bf;
+border-radius:5px;
+-moz-border-radius:5px;
+}
+td.button_red:hover {
+background: #DB0A0A;
+style: cursor:pointer;
+}
+b.red {
+color: red;
+}
+.userpanel {
+border-style: solid;
+border-width: 5px;
+border-color: #9696AE;
+border-radius: 3px;
+-moz-border-radius: 3px; 
+font-family: Tahoma;
+font-size: 12px;
+padding-top: 7px;
+padding-left:10px;
+padding-bottom: 7px;
+padding-right: 10px;
+width: 200px;
+position:fixed;
+left:20px;
+top: 375px;
+
+}

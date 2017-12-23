@@ -1,0 +1,195 @@
+<?php
+session_start(); 
+require_once("failai/userdata/connect.php");
+// Basic ban scrip
+
+mysql_select_db($c_database, $con);
+$ban_result = mysql_query("SELECT * FROM black_list");
+while ($row = mysql_fetch_array($ban_result)){
+if ($_SERVER[REMOTE_ADDR]==$row['IP'])# banned assholes 78.57.178.231
+{ header ("location: http://".$web_url."/403.shtml");}
+}
+// End of ban scrip by Simonas? 
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+
+<title> Kult.ura.lt </title>
+<style type="text/css">
+ <!-- Server side fonts 
+ DeliciousRoman
+ Voltaire
+ Tahoma
+ -->
+</style>
+<!-- ripintas cha sriptas -->
+<script>
+function myHide(field) {
+	if (field == 1) {
+		if (document.login.username.value == "Vartotojo vardas") 
+			document.login.username.value = "";
+		if (document.login.password.value == "")
+			document.login.password.value = "********";	
+	}
+	else if (field == 2) {
+		if (document.login.password.value == "********") 
+			document.login.password.value = "";
+		if (document.login.username.value == "") 
+			document.login.username.value = "Vartotojo vardas";
+	}
+}
+function myShow() {
+	if (document.login.password.value == "") 
+		document.login.password.value = "********";	
+}
+</script>
+
+<!--Clock scriptas -->
+<script type="text/javascript">
+function startTime()
+{
+var today=new Date();
+var h=today.getHours();
+var m=today.getMinutes();
+var s=today.getSeconds();
+// add a zero in front of numbers<10
+m=checkTime(m);
+s=checkTime(s);
+document.getElementById('txt').innerHTML=h+":"+m+":"+s;
+t=setTimeout('startTime()',500);
+}
+
+function checkTime(i)
+{
+if (i<10)
+  {
+  i="0" + i;
+  }
+return i;
+}
+</script>
+
+
+<script type="text/javascript"> //pole scrip 
+function getVote(int)
+{
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("poll").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","poll_vote.php?vote="+int,true);
+xmlhttp.send();
+}
+</script>
+</head>
+
+<form id="forme" name="forme">
+<input type="hidden" name="toBeReloaded" id="toBeReloaded" value=0>
+</form> 
+<!-- end of Head -->
+<body onload="if (location.href.indexOf('reload')==-1) location.replace(location.href+'?reload')">
+<div style="position:relative; top: 318px;z-index:-5">
+<div style="background-image:url('images/backgr.gif');
+height:35px;
+margin-left:-7px;
+margin-right:-7px;
+" ></div> <div style="position:absolute; top:10px;z-index:-6">Paspausk F5</div></div><!-- img backgroundas-->
+<div style="background-image:url('images/topback.gif');
+position:relative; top: -46px;
+height:48px;
+margin-left:-7px;
+margin-right:-7px;
+background-reapeat:x-reapeat;
+"></div>
+<center>
+<table>
+<td>
+<center><div class="bannar" style="width:138px; height:115px;"><b><img src="/images/banner.png" alt="paspausk F5"></img></b></div></center>
+</td>
+</table>
+</br>
+<div class="round"><div class="background">
+<table class="menu_bar">
+<div class="menu">
+<td>
+<tr class="menu_bar">
+<center><body onload="startTime()"><div id="txt" class="clock" ></div>
+</body>
+<body></center>
+<td style="color:white;cursor:pointer;" height="28px" cellspacing="0%" cellpadding="0%"  class="menu" onclick="window.open('/../index.php','_self')" align="middle">Pradzia</td>
+
+<td style="color:white;cursor:pointer;" height="28px" cellspacing="0%" cellpadding="0%"  class="menu" onclick="window.open('failai/addr.php','_self')" align="middle">Failai</td>
+
+<td style="color:white;cursor:pointer;" height="28px" cellspacing="0%" cellpadding="0%"  class="menu" onclick="window.open('/../school.php','_self')" align="middle">Mokykla</td>
+</tr></td></div></table> </div></br><br></div>
+<div style="height:1200px;width: 750px;" class="box" >
+<tr>
+<div class="margin">
+
+</p>
+</div>
+<div class="textmargin">
+ 
+<center>
+<h2><b></b></h2>
+<div class="middle">
+<div class="roundshit"><div class="button">
+<table class="button_bar" WIDTH="100%" border="0"><tr class="anim">
+<td  height="25px" cellspacing="0%" cellpadding="0%" style="cursor:pointer" class="button" onclick="window.open('form_testas.php','_self')" align="middle">Geografijos testas</td>
+<tr>
+</table></br>
+<table class="button_bar" WIDTH="100%" border="0"><tr class="anim">
+<td  height="25px" cellspacing="0%" cellpadding="0%" style="cursor:pointer" class="button" onclick="window.open('sandbox.php','_self')" align="middle">Sandbox</td>
+<div style="position: relative; left:50px;">
+<tr>
+</table>
+</div>
+</p>
+  </div>
+</td>
+</tr>
+</div>
+</center></center></div></div></div>
+<!-- user panele -->
+<div style="background-image:url('images/userbg.gif');" class="userpanel">
+<? if ($_SESSION[username]==null) // <table><th><td class=\"lbut\" align=\"middle\" style=\"cursor:pointer\" onclick=\"window.open('userdata/logout.php','_self')\">Atsijungti</td></tr></table>
+{ echo $_SESSION[log_error]."
+<form name=\"login\" action=\"failai/userdata/login.php\" method=\"post\">
+<input type=\"text\" name=\"username\" onfocus=\"myHide(1)\" onblur=\"myHide(1)\" value=\"Vartotojo vardas\"/><br>	
+<input type=\"password\" name=\"password\" onfocus=\"myHide(2)\" onblur=\"myShow\" value='********'/><br>
+<input type=\"hidden\" name=\"cookie\" value=\"set_c\"/>	
+<input type=\"submit\" class=\"button\" value=\"Prisijungti!\"/><br>
+</form><center><table><th><td WIDTH=\"120px\" height=\"15px\" cellspacing=\"0%\" cellpadding=\"0%\" style=\"cursor:pointer\" class=\"button\" onclick=\"window.open('userdata/register.php','_self')\" align=\"middle\">Registruotis</td></th></table></b></div></center>";
+} else {
+echo "<div class='none' style='color:white;'>Sveikas, ".$_SESSION[username]."                 <br></div><table width=\"100%\"><th>
+<td WIDTH=\"120px\" height=\"30px\" cellspacing=\"0%\" cellpadding=\"0%\" style=\"cursor:pointer\" class=\"button\" onclick=\"window.open('failai/userdata/myfiles.php','_self')\" align=\"middle\">Mano failai</td>
+<td WIDTH=\"120px\" height=\"30px\" cellspacing=\"0%\" cellpadding=\"0%\" style=\"cursor:pointer\" class=\"button\" onclick=\"window.open('failai/admin_up_form.php','_self')\" align=\"middle\">Įkelti failą</td>
+<td WIDTH=\"120px\" height=\"30px\" cellspacing=\"0%\" cellpadding=\"0%\" style=\"cursor:pointer\" class=\"button_red\" onclick=\"window.open('failai/userdata/logout.php','_self')\" align=\"middle\">Atsijungti</td></tr></table><br/>";
+}
+if ($_SESSION['username']=="Simonas")
+{ echo "<A href=\"userdata/admin_panel.php\" target=\"_self\">Admin Panel</A>"; }
+if ($_SESSION['log_error']!=null)
+{
+$_SESSION['log_error']=null;
+}
+?>
+</div>
+<img style="position:fixed;bottom:10px;right:50px;"src="images/copyr.png" width="90" height="45"/> 
+</body>
+
+</html>

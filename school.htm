@@ -1,0 +1,211 @@
+<?php
+session_start();
+require_once("failai/userdata/connect.php");
+// Basic ban scrip
+mysql_select_db($c_database, $con);
+$ban_result = mysql_query("SELECT * FROM black_list");
+while ($row = mysql_fetch_array($ban_result)){
+if ($_SERVER[REMOTE_ADDR]==$row['IP'])# banned assholes 78.57.178.231
+{ header ("location: http://".$web_url."/403.shtml");}
+}
+// End of ban scrip by Simonas?
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+
+<title> Kult.ura.lt </title>
+<style type="text/css">
+ <!-- Server side fonts 
+ DeliciousRoman
+ Voltaire
+ Tahoma
+ -->
+ 
+td.tvark {
+border:1px solid #b2b9bf;
+border-radius:2px;
+-moz-border-radius:2px; 
+text-align: middle;
+}
+</style>
+
+
+<!--Clock scriptas -->
+<script type="text/javascript">
+function startTime()
+{
+var today=new Date();
+var h=today.getHours();
+var m=today.getMinutes();
+var s=today.getSeconds();
+// add a zero in front of numbers<10
+m=checkTime(m);
+s=checkTime(s);
+document.getElementById('txt').innerHTML=h+":"+m+":"+s;
+t=setTimeout('startTime()',500);
+}
+
+function checkTime(i)
+{
+if (i<10)
+  {
+  i="0" + i;
+  }
+return i;
+}
+</script>
+
+
+<script type="text/javascript"> //pole scrip 
+function getVote(int)
+{
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("poll").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","poll_vote.php?vote="+int,true);
+xmlhttp.send();
+}
+</script>
+</head>
+<!-- end of Head -->
+<body>
+<div style="position:relative; top: 318px;z-index:-5">
+<div style="background-image:url('images/backgr.gif');
+height:35px;
+margin-left:-7px;
+margin-right:-7px;
+" ></div> <div style="position:absolute; top:10px;z-index:-6">Paspausk F5</div></div><!-- img backgroundas-->
+<div style="background-image:url('images/topback.gif');
+position:relative; top: -46px;
+height:48px;
+margin-left:-7px;
+margin-right:-7px;
+background-reapeat:x-reapeat;
+"></div>
+
+<center>
+<table>
+<td>
+<center><div class="bannar" style="width:138px; height:115px;"><b><img src="/images/banner.png"></img></b></div></center>
+</td>
+</table>
+</br>
+<div class="round">
+<table class="menu_bar">
+
+<div class="menu">
+<td>
+<tr class="menu_bar">
+<center><body onload="startTime()"><div id="txt" class="clock" ></div>
+</body>
+<body></center>
+<td height="28px" cellspacing="0%" cellpadding="0%" style="cursor:pointer" class="menu" onclick="window.open('/../index.php','_self')" align="middle">Pradzia</td>
+
+<td height="28px" cellspacing="0%" cellpadding="0%" style="cursor:pointer" class="menu" onclick="window.open('failai/addr.php','_self')" align="middle">Failai</td>
+
+
+<td height="28px" cellspacing="0%" cellpadding="0%" style="cursor:pointer" class="menu" onclick="window.open('/../school.php','_self')" align="middle">Mokykla</td>
+</tr></td></div></table> </div></br><br>
+<div class="box" >
+<tr>
+<div class="margin">
+
+</p>
+</div>
+<div class="textmargin">
+<center>
+<center>
+<div class="roundshit">
+
+<table border="1">
+<tr class="tvark">
+<th class="tvark"></th>
+<th class="tvark">Pirmadienis</th>
+<th class="tvark">Antradienis</th>
+<th class="tvark">Treciadienis</th>
+<th class="tvark">Ketvirtadienis</th>
+<th class="tvark">Penktadienis</th>
+</tr>
+<tr class="tvark">
+<td class="tvark">1. </td>
+<td class="tvark">Etika</td>
+<td class="tvark">Matematika</td>
+<td class="tvark">Angų klb.</td>
+<td class="tvark">Lietuvių klb.(literatūra)</td>
+<td class="tvark">Lietuvių klb.</td>
+<tr class="tvark">
+<td class="tvark">2.</td>
+<td class="tvark">Kūno kultūra</td>
+<td class="tvark">Anglų klb.</td>
+<td class="tvark">Lietuvių klb.</td>
+<td class="tvark">Lietuvių klb.</td>
+<td class="tvark">Rusų klb.</td>
+</tr>
+<tr class="tvark">
+<td class="tvark">3.</td>
+<td class="tvark">Chemija</td>
+<td class="tvark">Lietuvių klb.(literatūra)</td>
+<td class="tvark">Matematika</td>
+<td class="tvark">Geografija</td>
+<td class="tvark">Kūno kultūra</td>
+</tr>
+<tr class="tvark">
+<td class="tvark">4.</td>
+<td class="tvark">Istorija</td>
+<td class="tvark">Rusų klb.</td>
+<td class="tvark">Geografija</td>
+<td class="tvark">Tehnologijos</td>
+<td class="tvark">Dailė</td>
+</tr>
+<tr class="tvark">
+<td class="tvark">5.</td>
+<td class="tvark">Fizika</td>
+<td class="tvark">Informacinės tech.</td>
+<td class="tvark">Biologija</td>
+<td class="tvark">Pilietinis ugdymas</td>
+<td class="tvark">Biologija</td>
+</tr>
+<tr class="tvark">
+<td class="tvark">6.</td>
+<td class="tvark">Matematika</td>
+<td class="tvark">Anglų literatūra</td>
+<td class="tvark">Chemija</td>
+<td class="tvark">Istorija</td>
+<td class="tvark">Fizika</td>
+</tr>
+<tr class="tvark">
+<td class="tvark">7.</td>
+<td class="tvark">Anglų klb.</td>
+<td class="tvark">Klasės valandėlė</td>
+<td class="tvark"></td>
+<td class="tvark">Matematika</td>
+<td class="tvark">Muzika</td>
+</tr>
+</table>
+</center>
+</center>
+</p>
+  </div>
+</td>
+</tr>
+</div>
+</center></div></body>
+<img style="position:fixed;bottom:10px;right:50px;"src="images/copyr.png" width="90" height="45"/> 
+</html>
